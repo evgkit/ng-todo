@@ -1,0 +1,111 @@
+// @import 'base/index';
+
+body {
+  color: #2d3339;
+  font-family: "Varela Round", serif;
+  text-align: center;
+  background: #edeff0;
+  font-size: 16px;
+}
+
+a {
+  color: #3f8abf;
+  text-decoration: none;
+
+  &:hover {
+    color: #65a1cc;
+  }
+}
+
+.list {
+  background: #fff;
+  width: 80%;
+  min-width: 500px;
+  margin: 80px auto 0;
+  border-top: 40px solid #5a6772;
+  text-align: left;
+
+  .item {
+    border-bottom: 2px solid #edeff0;
+    padding: 17px 0 18px 17px;
+
+    label {
+      padding-left: 5px;
+      cursor: pointer;
+    }
+
+    .editing-label {
+      margin-left: 5px;
+      font-family: "Varela Round", serif;
+      border-radius: 2px;
+      border: 2px solid #a7b9c4;
+      font-size: 16px;
+      padding: 15px 0 15px 10px;
+      width: 60%;
+    }
+
+    .actions {
+      float: right;
+      margin-right: 20px;
+
+      a {
+        margin-left: 10px;
+      }
+
+      .delete {
+        color: #ed5a5a;
+
+        &:hover {
+          color: #f28888;
+        }
+      }
+    }
+
+    .editing-item {
+      .actions {
+        margin-top: 17px;
+      }
+    }
+  }
+
+  .edited {
+    label {
+      &:after {
+        content: " edited";
+        text-transform: uppercase;
+        color: #a7b9c4;
+        font-size: 14px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .completed {
+    label {
+      color: #a7b9c4;
+      text-decoration: line-through;
+    }
+  }
+
+  .add {
+    padding: 25px 0 27px 25px;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+
+  + span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    background: url('/assets/img/checkbox-empty.svg') left top no-repeat;
+    cursor: pointer;
+  }
+
+  &:checked + span {
+    background: url('/assets/img/checkbox-filled.svg') left top no-repeat;
+  }
+}
